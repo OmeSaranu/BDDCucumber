@@ -1,5 +1,10 @@
 package cucumber;
 
+import java.util.List;
+import java.util.Map;
+
+import io.cucumber.datatable.*;
+
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.But;
 import io.cucumber.java.en.Given;
@@ -29,9 +34,10 @@ public class HolidayStepDefinitions {
 		System.out.println("I want to go on a holiday");
 	}
 	@And("^We are (\\d+) adults$")
-	public void we_are(int noOfPeople)
+	//public void we_are(int noOfPeople, List<String>names)
+	public void we_are(int noOfPeople, List<Map<String,String>> names)
 	{
-		System.out.println("We are "+ noOfPeople +" adults");
+		System.out.println("We are "+ noOfPeople +" adults "+ names.toString());
 	}
     @And("^We want to book from ([^\"]*) to ([^\"]*)$")    
     public void book_dates(String fromDate, String toDate)

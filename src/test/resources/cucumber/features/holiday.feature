@@ -24,6 +24,11 @@ Feature: Going on a  holiday I want to book flight tickets and a hotel
     Given I live in London
     And I want to go on a holiday
     And We are 2 adults
+    # One dimentional data table is not working becuase of some error Cucumber 3.0 above
+    #|Ome|Sri|
+    |Adult1|Adult2|
+    |Ome   |Sri   |
+    |65    |70    |
     And We want to book from 10th Aug 2020 to 20th Aug 2020    
     When I go to a travel agent
     And Tell him my budget of 2000 pounds

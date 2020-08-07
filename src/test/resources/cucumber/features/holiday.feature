@@ -26,9 +26,9 @@ Feature: Going on a  holiday I want to book flight tickets and a hotel
     And We are 2 adults
     And We want to book from 10th Aug 2020 to 20th Aug 2020    
     When I go to a travel agent
-    And Tell him my budget of 2000pounds
+    And Tell him my budget of 2000 pounds
     Then He should be able to show me the holiday destination options in my budget
     And He should provide me option to cancel
-    But He should not ask for advance more than 300 USD
+    But He should not ask for advance more than 300 pounds
 
   

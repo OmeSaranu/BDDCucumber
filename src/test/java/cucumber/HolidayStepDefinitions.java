@@ -7,51 +7,61 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class HolidayStepDefinitions {
+	
+	
 
-	@Given("I live in London")
-	public void i_live_in ()
+//start and end symbols ^ $
+//passing values from scenario
+//[a-zA-Z]{1,} - any number of alphabets  kahsjhd HJAHUAU  AHAHhshsjsjsh
+//\\d+ - any number of digits  1  123  53333
+//[a-zA-Z0-9]{1,} alpha numeric
+//(.*) - list
+//[^\"]* anything
+
+	@Given("^I live in ([a-zA-Z]{1,})$")
+	public void i_live_in (String cityName)
 	{
-		System.out.println("I live in London");
+		System.out.println("I live in " + cityName);
 	}
-	@And("I want to go on a holiday")
+	@And("^I want to go on a holiday$")
 	public void i_want ()
 	{
 		System.out.println("I want to go on a holiday");
 	}
-	@And("We are 2 adults")
-	public void we_are()
+	@And("^We are (\\d+) adults$")
+	public void we_are(int noOfPeople)
 	{
-		System.out.println("We are 2 adults");
+		System.out.println("We are "+ noOfPeople +" adults");
 	}
-    @And("We want to book from 10th Aug 2020 to 20th Aug 2020")    
-    public void book_dates()
+    @And("^We want to book from ([^\"]*) to ([^\"]*)$")    
+    public void book_dates(String fromDate, String toDate)
     {
-		System.out.println("We want to book from 10th Aug 2020 to 20th Aug 2020");
+		System.out.println("We want to book from " +fromDate+ " to "+toDate);
 	}
-    @When("I go to a travel agent")
+    @When("^I go to a travel agent$")
     public void i_go()
     {
 		System.out.println("I go to a travel agent");
 	}
-    @And("Tell him my budget of 2000pounds")
-    public void mybudget()
+    @And("^Tell him my budget of (\\d+) pounds$")
+    public void mybudget(double budget)
     {
-		System.out.println("Tell him my budget of 2000£");
+		System.out.println("Tell him my budget of "+ budget+ "£");
 	}
-    @Then("He should be able to show me the holiday destination options in my budget")
+    @Then("^He should be able to show me the holiday destination options in my budget$")
     public void he_should()
     {
 		System.out.println("He should be able to show me the holiday destination options in my budget");
 	}
-    @And("He should provide me option to cancel")
+    @And("^He should provide me option to cancel$")
     public void cancel()
     {
 		System.out.println("He should provide me option to cancel");
 	}
-    @But("He should not ask for advance more than 300 USD")
-    public void he_should_not()
+    @But("^He should not ask for advance more than (\\d+) pounds")
+    public void he_should_not(double advance)
     {
-		System.out.println("He should not ask for advance more than 300 USD");
+		System.out.println("He should not ask for advance more than "+ advance+ "£");
 	}
 	
 	

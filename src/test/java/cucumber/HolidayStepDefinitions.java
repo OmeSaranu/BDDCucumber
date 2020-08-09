@@ -52,7 +52,7 @@ public void afterScenario()
 	{
 		System.out.println("We are "+ noOfPeople +" adults "+ names.toString());
 	}
-    @And("^We want to book from ([^\"]*) to ([^\"]*)$")    
+    @And("^We want to book a hotel from ([^\"]*) to ([^\"]*)$")    
     public void book_dates(String fromDate, String toDate)
     {
 		System.out.println("We want to book from " +fromDate+ " to "+toDate);

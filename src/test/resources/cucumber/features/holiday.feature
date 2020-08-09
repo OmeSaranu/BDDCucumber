@@ -36,4 +36,19 @@ Feature: Going on a  holiday I want to book flight tickets and a hotel
     And He should provide me option to cancel
     But He should not ask for advance more than 300 pounds
 
+ @BookFlight
+  Scenario: I want to book a flight
+    Given I live in London
+    And I want to go on a holiday
+    And We are 2 adults
+    |Adult1|Adult2|
+    |Ome   |Sri   |
+    |65    |70    |
+    And We want to book flight from London from 10th Aug 2020
+    And Return Flight on 20th Aug 2020
+    When I go to a travel agent
+    And Tell him my budget of 1000 pounds
+    Then He should be able to show me the flight options in my budget
+    And He should provide me option to cancel
+    But He should not ask for advance more than 300 pounds
   

@@ -4,7 +4,8 @@ import java.util.List;
 import java.util.Map;
 
 import io.cucumber.datatable.*;
-
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.But;
 import io.cucumber.java.en.Given;
@@ -13,7 +14,19 @@ import io.cucumber.java.en.When;
 
 public class HolidayStepDefinitions {
 	
+@Before
+public void beforeScenario()
+{
+	System.out.println("-----------Before execution-------------");
 	
+}
+
+@After
+public void afterScenario()
+{
+	System.out.println("-----------After execution-------------");
+	
+}
 
 //start and end symbols ^ $
 //passing values from scenario
@@ -70,8 +83,21 @@ public class HolidayStepDefinitions {
 		System.out.println("He should not ask for advance more than "+ advance+ "£");
 	}
 	
-	
-	
+    @And("^We want to book flight from ([a-zA-Z]{1,}) from ([^\"]*)$")
+    public void bookFlightFromandDest(String destination, String fromDate)
+    {
+		System.out.println("We want to book flight from "+ destination + " from "+ fromDate);
+	}
+    @And("Return Flight on ([^\"]*)$")
+    public void bookFlighttoDate(String toDate)
+    {
+		System.out.println("And Return Flight on "+ toDate);
+	}
+    @Then("^He should be able to show me the flight options in my budget$")
+    public void he_should_show()
+    {
+		System.out.println("He should be able to show me the flight options in my budget");
+	}
 	
 	
 	
